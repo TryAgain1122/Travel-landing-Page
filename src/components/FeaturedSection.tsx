@@ -5,19 +5,19 @@ import { CgViewComfortable } from "react-icons/cg";
 const features = [
   {
     title: "Safe Traveling",
-    icon: FaShieldAlt,
+    icon: <FaShieldAlt size={30}/>,
     description: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
   },
   {
     title: "Affordable Price",
-    icon: FaMoneyBillWave,
+    icon: <FaMoneyBillWave size={30}/>,
     description: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
   },
   {
-    title: 'Comfort Accomodation',
-    icon: CgViewComfortable,
-     description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit.',
-  }
+    title: "Comfort Accommodation",
+    icon: <CgViewComfortable size={30}/>,
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+  },
 ];
 
 const FeaturedSection = () => {
@@ -29,15 +29,11 @@ const FeaturedSection = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           {features.map((feature, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-lg shadow-lg"
-            >
-              <feature.icon size={30} />
-              
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p>{feature.description}</p>
-            
+            <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
+              {/* Render the icon as a component */}
+              <div>{feature.icon}</div>
+              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+              <p>{feature.description}</p>
             </div>
           ))}
         </div>
